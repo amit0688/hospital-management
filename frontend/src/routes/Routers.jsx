@@ -41,7 +41,7 @@ function Routers() {
       <Route path="/hospital/login" element={<HospitalLogin/>}/>
       <Route path="/hospital/:id" element={<HospitalProfile/>}/>
       <Route path="/hospital/doctors" element={<DoctorList/>}/>
-      <Route path="/hospital/dashboard" element={<HospitalDashboard/>}/>
+      {/* <Route path="/hospital/dashboard" element={<HospitalDashboard/>}/> */}
       <Route path="/hospital/update-profile" element={<UpdateHospitalProfile/>}/>
       <Route path="/hospital/update-pic" element={<UpdateHosPic/>}/>
       <Route path="/doctor/login" element={<DoctorLogin/>}/>

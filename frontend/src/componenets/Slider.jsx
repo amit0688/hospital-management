@@ -6,12 +6,12 @@ import { Link } from 'react-router-dom';
 
 function Slider({ user }) {
   const slides = [
-    { url: user.images[0] || 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80' },
-    { url: user.images[1] || 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80' },
-    { url: user.images[2] || 'https://images.unsplash.com/photo-1661961112951-f2bfd1f253ce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2672&q=80' },
-    { url: user.images[3] || 'https://images.unsplash.com/photo-1512756290469-ec264b7fbf87?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2253&q=80' },
-    { url: user.images[4] || 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2671&q=80' },
-    { url: user.images[5] || 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2671&q=80' }
+    { url: user.images[0] || 'http://res.cloudinary.com/dsusy7gxb/image/upload/v1715891853/votdcoomtcvel3ntpocu.jpg' },
+    { url: user.images[1] || 'http://res.cloudinary.com/dsusy7gxb/image/upload/v1715891853/votdcoomtcvel3ntpocu.jpg' },
+    { url: user.images[2] || 'http://res.cloudinary.com/dsusy7gxb/image/upload/v1715891853/votdcoomtcvel3ntpocu.jpg' },
+    { url: user.images[3] || 'http://res.cloudinary.com/dsusy7gxb/image/upload/v1715891853/votdcoomtcvel3ntpocu.jpg' },
+    { url: user.images[4] || 'http://res.cloudinary.com/dsusy7gxb/image/upload/v1715891853/votdcoomtcvel3ntpocu.jpg' },
+    { url: user.images[5] || 'http://res.cloudinary.com/dsusy7gxb/image/upload/v1715891853/votdcoomtcvel3ntpocu.jpg' }
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

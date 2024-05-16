@@ -64,7 +64,7 @@ const Navbar = () => {
             <NavLink onClick={() => setMenu(currentVal => !currentVal)} to="/" className={navClass => navClass.isActive ? 'text-primaryColor text-[16px] leading-7 font-[600] ' : 'text-textColor leading-7 font-[500px] hover:text-primaryColor'}>Home</NavLink>
             <NavLink onClick={() => setMenu(currentVal => !currentVal)} to="/finddoctor" className={navClass => navClass.isActive ? 'text-primaryColor text-[16px] leading-7 font-[600] ' : 'text-textColor leading-7 font-[500px] hover:text-primaryColor'}>Find Doctor</NavLink>
             <NavLink onClick={() => setMenu(currentVal => !currentVal)} to="/findhospital" className={navClass => navClass.isActive ? 'text-primaryColor text-[16px] leading-7 font-[600] ' : 'text-textColor leading-7 font-[500px] hover:text-primaryColor'}>Find Hospital</NavLink>
-            <NavLink onClick={() => setMenu(currentVal => !currentVal)} to="/about" className={navClass => navClass.isActive ? 'text-primaryColor text-[16px] leading-7 font-[600] ' : 'text-textColor leading-7 font-[500px] hover:text-primaryColor'}>About us</NavLink>
+            {/* <NavLink onClick={() => setMenu(currentVal => !currentVal)} to="/about" className={navClass => navClass.isActive ? 'text-primaryColor text-[16px] leading-7 font-[600] ' : 'text-textColor leading-7 font-[500px] hover:text-primaryColor'}>About us</NavLink> */}
           </div>
 
           {/* Nav right */}
@@ -78,9 +78,11 @@ const Navbar = () => {
                 {
                   userNavPanel ? <><div className="bg-white absolute right-0  rounded-md w-60 overflow-hidden z-50 border border-gray-200 ">
 
-                    <Link to={`/${userInfo.role}/${userInfo._id}`} className="link pl-8 py-4 rounded-t-md">
+{
+                      userInfo.role === "patient" ? "" :
+                    (<Link to={`/${userInfo.role}/${userInfo._id}`} className="link pl-8 py-4 rounded-t-md">
                       Profile
-                    </Link>
+                    </Link>) }
 
                     {
                       userInfo.role === "doctor" ? (<Link to={`${userInfo.role}/apopointments`} className="link pl-8 py-4">
@@ -92,16 +94,11 @@ const Navbar = () => {
                     }
 
                     {
-                      userInfo.role == "doctor" || userInfo.role == "hospital" ? (<Link to={`${userInfo.role}/dashboard`} className="link pl-8 py-4">
-                        Dashboard
+                      userInfo.role == "doctor" || userInfo.role == "hospital" ? (<Link to={`${userInfo.role}/update-profile`} className="link pl-8 py-4">
+                        Setting
                       </Link>) : ""
                     }
 
-
-
-                    <Link to="settings/edit-profile" className=" link pl-8 py-4">
-                      Settings
-                    </Link>
                     <button className="text-left p-4 hover:bg-gray-100 border border-gray-200 w-full pl-8 py-4" onClick={handleLogout}>
                       <h1 className="font-bold text-xl mg-1">Sign Out</h1>
                     </button>

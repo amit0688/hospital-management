@@ -11,7 +11,7 @@ function Sidebar() {
   return (
     <div className='sidebar bg-slate-100 '>
         <div className="flex w-full flex-col items-center duration-200 ease-in-out gap-2 py-4">
-            <NavLink to={`/${userInfo.role}/dashboard`} className={navClass => navClass.isActive ? 'text-primaryColor text-[16px] leading-7 font-[600] bg-blue-200 w-full px-5 py-3' : ' hover:bg-blue-100 py-3 px-5 w-full text-textColor leading-7 font-[500] hover:text-primaryColor'}>Dashboard</NavLink>
+            {/* <NavLink to={`/${userInfo.role}/dashboard`} className={navClass => navClass.isActive ? 'text-primaryColor text-[16px] leading-7 font-[600] bg-blue-200 w-full px-5 py-3' : ' hover:bg-blue-100 py-3 px-5 w-full text-textColor leading-7 font-[500] hover:text-primaryColor'}>Dashboard</NavLink> */}
             <NavLink to={`/${userInfo.role}/update-profile`} className={navClass => navClass.isActive ? 'text-primaryColor text-[16px] leading-7 font-[600] bg-blue-200 w-full px-5 py-3' : ' hover:bg-blue-100 py-3 px-5 w-full text-textColor leading-7 font-[500] hover:text-primaryColor'}>Update Profile</NavLink>
             {
               userInfo.role == "hospital" || "doctor" ? <NavLink to={`/${userInfo.role}/update-pic`} className={navClass => navClass.isActive ? 'text-primaryColor text-[16px] leading-7 font-[600] bg-blue-200 w-full px-5 py-3' : ' hover:bg-blue-100 py-3 px-5 w-full text-textColor leading-7 font-[500] hover:text-primaryColor'}>Update pic</NavLink> : ""

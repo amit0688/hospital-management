@@ -217,6 +217,16 @@ const getAllUsers = async (req, res) => {
   }
 }
 
+const get5 = async (req, res) => {
+  try {
+    const users = await Doctor.find({}, 'hospitalname fullname _id state city avatar phone feeType fee role instagram map specialization').limit(6);
+    res.json(users);
+  } catch (error) {
+    throw new Error('Something went wrong');
+  }
+}
+
+
 const getRegCity = async (req, res) => {
   try {
     const city = await Doctor.distinct('city')
@@ -307,5 +317,5 @@ const test = (req, res) => {
 }
 
 export { registerDocUser, loginUser, logoutUser, getUserProfile, updateUserProfile, updateUserAvatar , getAllUsers, getRegCity, getDocByCity, getDocById,
-  searchDoc, getDocAppointments, test,
+  searchDoc, getDocAppointments, test, get5,
 }

@@ -322,6 +322,15 @@ const getHosByCity = asyncHandler(async (req, res) => {
   }
 })
 
+const getHos5 = async (req, res) => {
+  try {
+    const users = await Hospital.find({}, 'businessname _id city images avatar phonenumber role ').limit(6);
+    res.json(users);
+  } catch (error) {
+    throw new Error('Something went wrong');
+  }
+}
+
 const getHosById = asyncHandler(async (req, res) => {
   try {
     const hospital = await Hospital.findById(req.params.id)
@@ -391,5 +400,5 @@ const getAllDoctors = asyncHandler(async (req, res) => {
 
 
 export { registerUser, loginUser, logoutUser, getUserProfile, updateUserProfile ,getHosRegCity, getAllUsers, getCity, updateUserAvatar, updateUserImages, getHosByCity, getHosById,
-  searchHos, getAllDoctors, 
+  searchHos, getAllDoctors, getHos5,
 }

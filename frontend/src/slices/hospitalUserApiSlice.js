@@ -57,6 +57,13 @@ export const userApiSLice = apiSlice.injectEndpoints({
             }),
         }),
 
+        getHos5: builder.query({
+            query: () =>( {
+                url: `${USER_URL}/get5`,
+                method: 'GET', 
+            }),
+        }),
+
         getAllDoctors: builder.query({
             query: () =>( {
                 url: `${USER_URL}/${id}/doctors`,
@@ -91,5 +98,5 @@ export const userApiSLice = apiSlice.injectEndpoints({
 
 
 export const { useLoginMutation, useLogoutMutation, useRegisterMutation, useGetAllQuery, useUpdateUserMutation, useUpdateAvatarMutation, useUpdateImagesMutation, useGetHospitalsByCityQuery, useGetHosByIdQuery,
-    useSearchHospitalsQuery, useGetAllDoctorsQuery,
+    useSearchHospitalsQuery, useGetAllDoctorsQuery, useGetHos5Query,
 } = userApiSLice

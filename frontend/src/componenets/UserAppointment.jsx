@@ -45,14 +45,14 @@ function UserAppointment({ appointment }) {
             </div>
         </div>
 
-        <div className='w-full flex justify-between mt-4'>
+        {/* <div className='w-full flex justify-between mt-4'>
             <button className='bg-blue-100 font-[500] px-10  text-blue-600 py-3 w-[45%] rounded-full'>
                 Cancel
             </button> 
             <button className='bg-blue-600 text-white  px-10 py-3 w-[45%] rounded-full'>
                 Reschedule
             </button> 
-        </div>
+        </div> */}
 
     </div>
   )

@@ -41,25 +41,25 @@ function DoctorCard({user}) {
             <h1 className='text-xs mt-2  md:leading-5 line-clamp-3 '> {user.city}, {user.state} </h1>
             </div>
 
-            <div className='flex items-center mt-2'>
+            {/* <div className='flex items-center mt-2'>
               <CiStar />
               <CiStar />
               <CiStar />
               <CiStar />
               <CiStar />
               <p className='text-xs'> (200)</p>
-            </div>
+            </div> */}
           </div>
 
 
           <div className='flex items-center'>
-            <p className='mt-2 text-sm'><span className='font-[600] pl-1 pr-1'>&#8377;</span> {user.fee ? user.fee : 1500} / {user.feeType ? user.feeType : "" } </p>
+            <p className='mt-2 text-sm'><span className='font-[600] pl-1 pr-1'>&#8377;</span> {user.fee ? user.fee : 100} / {user.feeType ? user.feeType : "" } </p>
           </div>
         </div>
 
 
         <div className=' flex flex-col gap-3 '>
-          <a href="https://maps.app.goo.gl/1VASKWaiZa7kxEh79" rel='noopener' target='_blank' className='text-xs hover:font-[800]  p-2 rounded-full border border-solid border-black hover:scale-125 hover:animate-in hover:bg-blue-300 '><CiLocationOn /></a>
+          <a href={user.location} rel='noopener' target='_blank' className='text-xs hover:font-[800]  p-2 rounded-full border border-solid border-black hover:scale-125 hover:animate-in hover:bg-blue-300 '><CiLocationOn /></a>
           <a href={`tel:+91${user.phone}`} rel='noopener' target='_blank' className='text-xs hover:font-[800]  p-2 rounded-full border border-solid border-black hover:scale-125 hover:animate-in hover:bg-blue-300 '><IoIosCall /></a>
           <a href={user.instagram} rel='noopener' target='_blank' className='text-xs hover:font-[800]  p-2 rounded-full border border-solid border-black hover:scale-125 hover:animate-in hover:bg-blue-300 '><FaInstagram /></a>
         </div>

@@ -50,6 +50,13 @@ export const doctorApiSLice = apiSlice.injectEndpoints({
             }),
         }),
 
+        getDoc5: builder.query({
+            query: () =>( {
+                url: `${USER_URL}/get5`,
+                method: 'GET', 
+            }),
+        }),
+
         getDocByCity: builder.query({
             query: (city) =>( {
                 url: `${USER_URL}/city/?city=${city}`,
@@ -85,5 +92,5 @@ export const doctorApiSLice = apiSlice.injectEndpoints({
 
 
 export const { useLoginDocMutation, useLogoutDocMutation, useRegisterDocMutation, useGetAllDocQuery, useUpdateUserDocMutation, useGetDocByCityQuery, useGetDocByIdQuery, useUpdateDocAvatarMutation,
-    useSearchDoctorsQuery, useGetDocAppointmentsQuery,
+    useSearchDoctorsQuery, useGetDocAppointmentsQuery, useGetDoc5Query
  } = doctorApiSLice

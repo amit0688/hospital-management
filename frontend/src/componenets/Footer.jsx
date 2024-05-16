@@ -21,10 +21,13 @@ function Footer() {
 
           <div><p className='text-xs'>Copyright &copy; 2024 developed by Amit</p></div>
           <div className=' p-1 flex gap-4 '>
-          <a href="https://maps.app.goo.gl/1VASKWaiZa7kxEh79" rel='noopener' target='_blank' className='text-sm  p-2 rounded-full border border-solid border-black '><CiLocationOn /></a>
-          <a href="https://maps.app.goo.gl/1VASKWaiZa7kxEh79" rel='noopener' target='_blank' className='text-sm  p-2 rounded-full border border-solid border-black '><IoIosCall /></a>
-          <a href="https://maps.app.goo.gl/1VASKWaiZa7kxEh79" rel='noopener' target='_blank' className='text-sm  p-2 rounded-full border border-solid border-black '><FaWhatsapp /></a>
-          <a href="https://maps.app.goo.gl/1VASKWaiZa7kxEh79" rel='noopener' target='_blank' className='text-sm  p-2 rounded-full border border-solid border-black '><FaInstagram /></a>
+          <a href="https://maps.app.goo.gl/1VASKWaiZa7kxEh79" rel='noopener' target='_blank' className='text-xs hover:font-[800]  p-2 rounded-full border border-solid border-black hover:scale-125 hover:animate-in hover:bg-blue-300 '><CiLocationOn /></a>
+
+          <a href={`tel:+916389540688`} rel='noopener' target='_blank' className='text-xs hover:font-[800]  p-2 rounded-full border border-solid border-black hover:scale-125 hover:animate-in hover:bg-blue-300 '><IoIosCall /></a>
+
+          <a href="tel:+916389540688" rel='noopener' target='_blank' className='text-xs hover:font-[800]  p-2 rounded-full border border-solid border-black hover:scale-125 hover:animate-in hover:bg-blue-300'><FaWhatsapp /></a>
+          <a href="https://www.instagram.com/itz_amit10/" rel='noopener' target='_blank' className='text-xs hover:font-[800]  p-2 rounded-full border border-solid border-black hover:scale-125 hover:animate-in hover:bg-blue-300 '><FaInstagram /></a>
+
           </div>
         </div>
 
@@ -35,22 +38,22 @@ function Footer() {
             <NavLink to="/" >Home</NavLink>
             <NavLink to="/doctor">Find Doctor</NavLink>
             <NavLink to="/hospital">Find Hospital</NavLink>
-            <NavLink to="/about">About us</NavLink>
+            {/* <NavLink to="/about">About us</NavLink> */}
         </div>
 
         <div className='flex flex-col gap-2'>
           <h1 className='font-[700]'>For Hospitals</h1>
             <NavLink to="hospital/signup" >Sign Up</NavLink>
             <NavLink to="hospital/login">Login</NavLink>
-            <NavLink to="/hospital/faq">FAQ</NavLink>
-            <NavLink to="hospital/about">About</NavLink>
+            {/* <NavLink to="/hospital/faq">FAQ</NavLink> */}
+            {/* <NavLink to="hospital/about">About</NavLink> */}
         </div>
 
         <div className='flex flex-col gap-2'>
           <h1 className='font-[700]'>For Doctors</h1>
             <NavLink to="/doctor/login">Login</NavLink>
-            <NavLink to="/doctor/faq">FAQ</NavLink>
-            <NavLink to="/about">About</NavLink>
+            {/* <NavLink to="/doctor/faq">FAQ</NavLink>
+            <NavLink to="/about">About</NavLink> */}
         </div>
         </div>
 

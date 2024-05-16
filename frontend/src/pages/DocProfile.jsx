@@ -72,56 +72,64 @@ function DocProfile() {
               <p>{about}</p>
               </div>
 
-              <div className='rounded-lg border border-gray-200 p-4 flex flex-col gap-4 w-full md:w-[40%]' >
-              <h1 className='font-[650] text-sm'>Timings</h1>
+              <div className='rounded-lg border border-gray-200 p-4 flex flex-col gap-4 w-full ' >
+              <h1 className='font-[650] text-sm'>Working hours</h1>
 
 
               
                 <div className=''>
-                  <div className='flex gap-4 w-[70%] justify-between'><p className='text-md font-[550]'>Days</p>
-                  <p className='text-md font-[550]'>Time</p>
+                  <div className='flex gap-4 w-full md:w-[80%] justify-between'><p className='text-md font-[550]'>Days</p>
+                  <p className='text-xs md:text-md font-[550]'>Morning</p>
+                  <p className='text-xs md:text-md font-[550]'>Evening</p>
                   </div>
                 </div>
                 <div className=''>
-                  <div className='flex gap-4 w-[70%] justify-between'><p className='text-sm'>Sunday</p>
-                  <p className='text-sm'>7-11</p>
+                  <div className='flex gap-4 w-full md:w-[80%] justify-between'><p className='text-sm'>Sunday</p>
+                  <p className='text-xs md:text-sm'>8:00 am - 1:00 pm</p>
+                  <p className='text-xs md:text-sm'>4:00 am - 1:00 pm</p>
                   </div>
                 </div>
                 <div className=''>
-                  <div className='flex gap-4 w-[70%] justify-between'><p className='text-sm'>Monday</p>
-                  <p className='text-sm'>7-11</p>
+                  <div className='flex gap-4 w-full md:w-[80%] justify-between'><p className='text-sm'>Monday</p>
+                  <p className='text-xs md:text-sm'>8:00 am - 1:00 pm</p>
+                  <p className='text-xs md:text-sm'>4:00 am - 1:00 pm</p>
                   </div>
                 </div>
                 <div className=''>
-                  <div className='flex gap-4 w-[70%] justify-between'><p className='text-sm'>Tuesday</p>
-                  <p className='text-sm'>7-11</p>
+                  <div className='flex gap-4 w-full md:w-[80%] justify-between'><p className='text-sm'>Tuesday</p>
+                  <p className='text-xs md:text-sm'>8:00 am - 1:00 pm</p>
+                  <p className='text-xs md:text-sm'>4:00 am - 1:00 pm</p>
                   </div>
                 </div>
                 <div className=''>
-                  <div className='flex gap-4 w-[70%] justify-between'><p className='text-sm'>Wednesday</p>
-                  <p className='text-sm'>7-11</p>
+                  <div className='flex gap-4 w-full md:w-[80%] justify-between'><p className='text-sm'>Wednesday</p>
+                  <p className='text-xs md:text-sm'>8:00 am - 1:00 pm</p>
+                  <p className='text-xs md:text-sm'>4:00 am - 1:00 pm</p>
                   </div>
                 </div>
                 <div className=''>
-                  <div className='flex gap-4 w-[70%] justify-between'><p className='text-sm'>Thursday</p>
-                  <p className='text-sm'>7-11</p>
+                  <div className='flex gap-4 w-full md:w-[80%] justify-between'><p className='text-sm'>Thursday</p>
+                  <p className='text-xs md:text-sm'>8:00 am - 1:00 pm</p>
+                  <p className='text-xs md:text-sm'>4:00 am - 1:00 pm</p>
                   </div>
                 </div>
                 <div className=''>
-                  <div className='flex gap-4 w-[70%] justify-between'><p className='text-sm'>Friday</p>
-                  <p className='text-sm'>7-11</p>
+                  <div className='flex gap-4 w-full md:w-[80%] justify-between'><p className='text-sm'>Friday</p>
+                  <p className='text-xs md:text-sm'>8:00 am - 1:00 pm</p>
+                  <p className='text-xs md:text-sm'>4:00 am - 1:00 pm</p>
                   </div>
                 </div>
                 <div className=''>
-                  <div className='flex gap-4 w-[70%] justify-between'><p className='text-sm'>Saturday</p>
-                  <p className='text-sm'>7-11</p>
+                  <div className='flex gap-4 w-full md:w-[80%] justify-between'><p className='text-sm'>Saturday</p>
+                  <p className='text-xs md:text-sm'>8:00 am - 1:00 pm</p>
+                  <p className='text-xs md:text-sm'>4:00 am - 1:00 pm</p>
                   </div>
                 </div>
               </div>
 
-              <div className='rounded-lg border border-gray-200 p-4 flex flex-col gap-4 w-full' >
+              {/* <div className='rounded-lg border border-gray-200 p-4 flex flex-col gap-4 w-full' >
               <h1 className='font-[650] text-sm'>About me</h1>
-              </div>
+              </div> */}
           </div>
 
 

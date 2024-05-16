@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom';
 import image from '../assets/images/doctor-img01.png'
 import { FaLocationDot } from "react-icons/fa6";
@@ -19,7 +19,7 @@ function HospitalProfile() {
 
 
 
-  const { about, businessname, city, state, instagram, phone, doctors} = hos || {}
+  const { about, businessname, city, state, instagram, phone, doctors, map } = hos || {}
   // console.log(hos.doctor[0])
   // console.log(hos)
   // console.log(doctors)
@@ -44,25 +44,25 @@ function HospitalProfile() {
                   </div>
 
                   <div className='pl-2 md:mt-4' >
-                    <h1 className='font-[650] mt-6 lg:mt-0 line-clamp-1'>{businessname} </h1>
+                    <h1 className='font-[650] mt-6 lg:mt-0 md:text-3xl line-clamp-1'>{businessname} </h1>
 
-                    <div className='flex items-center gap-2'>
+                    {/* <div className='flex items-center gap-2'>
                       <p className='text-xs md:text-sm mt-2  md:leading-5 line-clamp-3 hover:font-[500]'><FaHospital /></p>
                       <h1 className='text-xs md:text-sm mt-2  md:leading-5 line-clamp-3 hover:font-[500]'> { } </h1>
-                    </div>
+                    </div> */}
 
                     <div className='flex items-center gap-2 '>
                       <p className='text-xs md:text-sm mt-2  md:leading-5 line-clamp-3 hover:font-[500] cursor-pointer'><FaLocationDot /></p>
                       <h1 className='text-xs md:text-sm mt-2  md:leading-5 line-clamp-3 hover:font-[500]  cursor-pointer'> {city}, {state} </h1>
                     </div>
-                    <div className='bg-[#DFFFFD] py-1 px-2 rounded-xl w-[80px]  max-w-[120px] flex items-center justify-center mt-2 '>
+                    {/* <div className='bg-[#DFFFFD] py-1 px-2 rounded-xl w-[80px]  max-w-[120px] flex items-center justify-center mt-2 '>
                       <h1 className='text-[#4D8076] font-[700] text-sm '>{ }</h1>
-                    </div>
+                    </div> */}
 
                     <div className=' flex gap-3 mt-3 '>
-                      <a href="https://maps.app.goo.gl/1VASKWaiZa7kxEh79" rel='noopener' target='_blank' className='text-xs hover:font-[800]  p-2 rounded-full border border-solid border-black hover:scale-125 hover:animate-in hover:bg-blue-300 '><CiLocationOn /></a>
-                      <a href="https://maps.app.goo.gl/1VASKWaiZa7kxEh79" rel='noopener' target='_blank' className='text-xs hover:font-[800]  p-2 rounded-full border border-solid border-black hover:scale-125 hover:animate-in hover:bg-blue-300 '><IoIosCall /></a>
-                      <a href="https://github.com/fireclint/react-tailwind-slider" rel='noopener' target='_blank' className='text-xs hover:font-[800]  p-2 rounded-full border border-solid border-black hover:scale-125 hover:animate-in hover:bg-blue-300 '><FaInstagram /></a>
+                      <a href={map} rel='noopener' target='_blank' className='text-xs hover:font-[800]  p-2 rounded-full border border-solid border-black hover:scale-125 hover:animate-in hover:bg-blue-300 '><CiLocationOn /></a>
+                      <a href={`tel:+91${phone}`} rel='noopener' target='_blank' className='text-xs hover:font-[800]  p-2 rounded-full border border-solid border-black hover:scale-125 hover:animate-in hover:bg-blue-300 '><IoIosCall /></a>
+                      <a href={instagram} rel='noopener' target='_blank' className='text-xs hover:font-[800]  p-2 rounded-full border border-solid border-black hover:scale-125 hover:animate-in hover:bg-blue-300 '><FaInstagram /></a>
                     </div>
                     {/* <button className='rounded-2xl border-2 border-blue-400 hover:border-blue-600 hover:bg-blue-50 mt-6 text-sm p-2 line-clamp-1'>Book appointment</button> */}
                   </div>
@@ -74,7 +74,7 @@ function HospitalProfile() {
                   <p>{about}</p>
                 </div>
 
-                <div className='rounded-lg border border-gray-200 p-4 flex flex-col gap-4 w-full' >
+                {/* <div className='rounded-lg border border-gray-200 p-4 flex flex-col gap-4 w-full' >
                   <h1 className='font-[650] text-sm'>About Me</h1>
                   <p>{about}</p>
                 </div>
@@ -82,21 +82,23 @@ function HospitalProfile() {
 
                 <div className='rounded-lg border border-gray-200 p-4 flex flex-col gap-4 w-full' >
                   <h1 className='font-[650] text-sm'>About me</h1>
-                </div>
+                </div> */}
+
+
               </div>
 
 
               {/* RIGHT DIV */}
               <div className=' static md:sticky md:top-[140px]  min-h-[200px] h-[80vh] md:max-h-[570px] w-full md:max-w-[35%] lg:max-w-[30%] xl:max-w-[25%] border border-gray-200 rounded-lg py-4 pl-4 pr-1'>
                 <h1 className='font-[650] text-sm mb-2'>Our Doctors</h1>
-                <ScrollArea  className=" h-[97%]  " >
+                <ScrollArea className=" h-[97%]  " >
                   <div className='pr-3 h-full   '>
 
-                  {
-                    doctors.map(doctor => (
-                      
-                      <DocSuggestion key={doctor._id} doctor={doctor} />
-                    ))}
+                    {
+                      doctors.map(doctor => (
+
+                        <DocSuggestion key={doctor._id} doctor={doctor} />
+                      ))}
                   </div>
                 </ScrollArea>
               </div>
