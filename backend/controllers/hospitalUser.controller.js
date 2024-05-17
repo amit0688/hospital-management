@@ -2,6 +2,8 @@ import asyncHandler from 'express-async-handler'
 import { Hospital } from '../models/HospitalSchema.js'
 import generateToken from '../utils/generateToken.js';
 import {uploadOnCloudinary} from '../utils/cloudinary.js'
+import { Doctor } from '../models/DoctorSchema.js'
+
 
 const registerUser = asyncHandler(async (req, res) => {
     const { fullname, email, password, businessname,state, city, phonenumber, gender } = req.body;
@@ -346,6 +348,9 @@ const getHosById = asyncHandler(async (req, res) => {
   }
 })
 
+
+
+
 const searchHos = asyncHandler(async (req, res) => {
   const { city, search } = req.query;
   try {
@@ -373,32 +378,40 @@ const searchHos = asyncHandler(async (req, res) => {
 
 const getAllDoctors = asyncHandler(async (req, res) => {
   try {
-    const hospital = await Hospital.findById(req.params._id).populate('doctors');
+    const id = req.user._id
+    const hospital = await Hospital.findById(id)
+    .select('-password')
+    .populate('doctors', 'fullname specialization email id experience avatar')
     if (!hospital) {
-      return res.status(404).json({ error: 'Hospital not found' });
+      throw new Error("Hospital not found")
     }
-  
-    res.json({
-      hospital: hospital,
-      doctors: hospital.doctors.map(doctor => ({
-        _id: doctor._id,
-        fullname: doctor.fullname,
-        experience: doctor.experience,
-        specialization: doctor.specialization
-      }))
-    });
-  } catch (err) {
-    console.error(err);
-    throw new Error("Internal error");
-    
+    const doctors = hospital.doctors;
+    res.json(doctors);
+  } catch (error) {
+    console.error("Error fetching doctor:", error);
+    throw new Error("some error occured " + error.message)
   }
   
 })
+
+const deleteDoctor = asyncHandler(async (req, res) => {
+  try {
+    const result = await Doctor.deleteOne({ _id: req.params.id });
+    if (result.deletedCount === 0) {
+      return res.status(404).json({ message: 'Doctor not found' });
+    }
+    res.json({ message: 'Doctor removed' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
 
 
 
 
 
 export { registerUser, loginUser, logoutUser, getUserProfile, updateUserProfile ,getHosRegCity, getAllUsers, getCity, updateUserAvatar, updateUserImages, getHosByCity, getHosById,
-  searchHos, getAllDoctors, getHos5,
+  searchHos, getAllDoctors, getHos5, deleteDoctor
 }

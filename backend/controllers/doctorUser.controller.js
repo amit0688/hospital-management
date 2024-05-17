@@ -291,7 +291,9 @@ const getDocAppointments = async (req, res) => {
 
   try {
       const id = req.user._id; // Use req.params.id to get the user ID from the route parameters
-      // console.log(req.user)ss
+      if (!req.user || !req.user._id) {
+        return res.status(400).json({ error: "User ID is missing or invalid" });
+      }
       console.log(id)
       const user = await Doctor.findById(id).populate({
         path: 'appointments',
@@ -312,10 +314,24 @@ const getDocAppointments = async (req, res) => {
   }
 };
 
+
+const suggestDocSecialization = async (req, res) => { 
+  try {
+    const doctors = await Doctor.find({
+      specialization: req.params.specialization,
+      _id: { $ne: req.params.currentDoctorId } // Exclude current doctor's ID
+    }).limit(6);
+    res.json(doctors);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error' });
+  }
+}
+
 const test = (req, res) => {
   res.json({ message: 'Tested' });
 }
 
 export { registerDocUser, loginUser, logoutUser, getUserProfile, updateUserProfile, updateUserAvatar , getAllUsers, getRegCity, getDocByCity, getDocById,
-  searchDoc, getDocAppointments, test, get5,
+  searchDoc, getDocAppointments, test, get5, suggestDocSecialization,
 }

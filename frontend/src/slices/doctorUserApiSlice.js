@@ -85,6 +85,13 @@ export const doctorApiSLice = apiSlice.injectEndpoints({
             }),
         }),
 
+        suggestDocSecialization: builder.query({
+            query: ({ specialization, currentDoctorId }) =>( {
+                url: `${USER_URL}/suggest-doctors/${specialization}/${currentDoctorId}`,
+                method: 'GET', 
+            }),
+        }),
+
         
 
     }),
@@ -92,5 +99,5 @@ export const doctorApiSLice = apiSlice.injectEndpoints({
 
 
 export const { useLoginDocMutation, useLogoutDocMutation, useRegisterDocMutation, useGetAllDocQuery, useUpdateUserDocMutation, useGetDocByCityQuery, useGetDocByIdQuery, useUpdateDocAvatarMutation,
-    useSearchDoctorsQuery, useGetDocAppointmentsQuery, useGetDoc5Query
+    useSearchDoctorsQuery, useGetDocAppointmentsQuery, useGetDoc5Query, useSuggestDocSecializationQuery,
  } = doctorApiSLice

@@ -85,9 +85,9 @@ const Navbar = () => {
                     </Link>) }
 
                     {
-                      userInfo.role === "doctor" ? (<Link to={`${userInfo.role}/apopointments`} className="link pl-8 py-4">
-                        Bookings
-                      </Link>) : userInfo.role == "hospital" ? "" : (<Link to={`user/${userInfo._id}/apopointments`} className="link pl-8 py-4">
+                      userInfo.role === "doctor" ? (<Link to={`${userInfo.role}/appointments`} className="link pl-8 py-4">
+                        Apopointments
+                      </Link>) : userInfo.role == "hospital" ? "" : (<Link to={`user/${userInfo._id}/appointments`} className="link pl-8 py-4">
                         My apopointments
                       </Link>)
 

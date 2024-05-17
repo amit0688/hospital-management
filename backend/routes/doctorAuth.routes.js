@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { get5, getAllUsers, getDocAppointments, getDocByCity, getDocById, loginUser, registerDocUser, searchDoc, test, updateUserAvatar, updateUserProfile } from "../controllers/doctorUser.controller.js";
+import { get5, getAllUsers, getDocAppointments, getDocByCity, getDocById, loginUser, registerDocUser, searchDoc, suggestDocSecialization, test, updateUserAvatar, updateUserProfile } from "../controllers/doctorUser.controller.js";
 import { protectDoc, verifyDoc } from "../middlewares/protectDoc.js";
 import {upload} from "../middlewares/multer.middleware.js"
 import {protect, verifyData, verifyHos} from "../middlewares/protect.js"
@@ -17,6 +17,7 @@ router.route("/city").get(getDocByCity)
 router.route("/search").get(searchDoc)
 router.route("/appointments").get(protectDoc, getDocAppointments )
 router.route("/test").get(test)
+router.route("/suggest-doctors/:specialization/:currentDoctorId").get(suggestDocSecialization)
 router.route("/:id").get(getDocById);
 
 

@@ -66,7 +66,7 @@ export const userApiSLice = apiSlice.injectEndpoints({
 
         getAllDoctors: builder.query({
             query: () =>( {
-                url: `${USER_URL}/${id}/doctors`,
+                url: `${USER_URL}/doctors`,
                 method: 'GET', 
             }),
         }),
@@ -92,11 +92,20 @@ export const userApiSLice = apiSlice.injectEndpoints({
             }),
         }),
 
+        deleteDoctor: builder.mutation({
+            query: (id) =>( {
+                url: `${USER_URL}/${id}`,
+                method: 'DELETE', 
+            }),
+        }),
+
+
+
 
     }),
 });
 
 
 export const { useLoginMutation, useLogoutMutation, useRegisterMutation, useGetAllQuery, useUpdateUserMutation, useUpdateAvatarMutation, useUpdateImagesMutation, useGetHospitalsByCityQuery, useGetHosByIdQuery,
-    useSearchHospitalsQuery, useGetAllDoctorsQuery, useGetHos5Query,
+    useSearchHospitalsQuery, useGetAllDoctorsQuery, useGetHos5Query, useDeleteDoctorMutation,
 } = userApiSLice

@@ -36,7 +36,7 @@ function Routers() {
       <Route path="/findhospital" element={<FindHospital /> } />
       <Route path="/user/login" element={<UserLogin /> } />
       <Route path="/user/signup" element={<UserSignup /> } />
-      <Route path="/user/:id/apopointments" element={<UserBookings /> } />
+      <Route path="/user/:id/appointments" element={<UserBookings /> } />
       <Route path="/hospital/signup" element={<HospitalSignup/>}/>
       <Route path="/hospital/login" element={<HospitalLogin/>}/>
       <Route path="/hospital/:id" element={<HospitalProfile/>}/>
