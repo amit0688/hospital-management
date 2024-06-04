@@ -18,6 +18,7 @@ import { CalendarDays, Clock } from 'lucide-react'
 import { useBookingMutation, useCheckoutMutation } from '@/slices/bookingSlice'
 import toast from 'react-hot-toast'
 import axios from 'axios'
+import { redirect, useNavigate } from 'react-router-dom'
 
 
 
@@ -57,6 +58,8 @@ function Booking({ doctor }) {
   const { userInfo } = useSelector((state) => state.auth)
   const [date, setDate] = useState(new Date())
   const [selectedTimeSlot, setSelectedTimeSlot] = useState()
+  const navigate = useNavigate()
+
   const [timeSlots, setTimeSlots] = useState([]);
   // const [booking, {isLoading}] = useBookingMutation()
   // const [checkout] = useCheckoutMutation()
@@ -92,6 +95,9 @@ function Booking({ doctor }) {
   const fee = doctor.fee ? doctor.fee : 1
 
   const handleBooking = async () => {
+    !userInfo ? (navigate('/user/login'), toast.error("Please Login to book appointment")) : console.log('logged in')
+
+
     try {
       const { data: { key } } = await axios.get("http://www.localhost:3000/api/getkey");
       const { data: { order } } = await axios.post("http://localhost:3000/api/booking/checkout", {

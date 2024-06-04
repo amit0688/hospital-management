@@ -14,7 +14,7 @@ function UserBookings() {
   // console.log(userInfo._id)
 
   const { data: appointments, isLoading, isError, refetch } = useGetAppointmentsQuery(id);
-  // console.log(data)
+  console.log(appointments)
   return (
     <div>
         <div className='container'>

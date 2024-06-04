@@ -25,6 +25,11 @@ function Home() {
   const { data: hospitals } = useGetHos5Query()
   console.log(doctors)
   console.log(hospitals)
+  
+  // const fullName = doctors.map((doctor) => doctor.fullname).filter((doctor, i) => i < 3 )
+  // console.log(fullName)
+
+
   return (
     <>
       <div className='hero__section h-cover min-h-[700px] max-h-[820px] '>
@@ -96,6 +101,8 @@ function Home() {
                 :
                 (hospitals.length ?
                   <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 mt-12'>
+  {/* const fullName = doctors.map((doctor) => doctor.fullname).filter((doctor, i) => i < 3 ) */}
+
                     {hospitals && hospitals.map((hospital) => (
                       <HospitalCard key={hospital._id} user={hospital} />
                     ))}

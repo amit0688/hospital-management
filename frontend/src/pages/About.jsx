@@ -10,6 +10,30 @@ import Loader from '@/componenets/Loader';
 
 
 function About() {
+
+    const doctors = [
+        
+    ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 return (
 <>
         {/* <StarRating size='24' />

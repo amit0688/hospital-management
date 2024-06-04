@@ -299,7 +299,7 @@ const getDocAppointments = async (req, res) => {
         path: 'appointments',
         populate: { 
           path: 'user', 
-          select: 'fullname avatar ' // Select the fields you want to populate
+          select: 'fullname avatar city' // Select the fields you want to populate
         }
       });
 
@@ -307,7 +307,7 @@ const getDocAppointments = async (req, res) => {
           return res.status(404).json({ error: "User not found" });
       }
  
-      res.json(req.user);
+      res.json(user.appointments);
   } catch (error) {
       console.error("Error fetching appointment details:", error);
       res.status(500).json({ error: "Internal Server Error" });
